@@ -18,7 +18,7 @@ defmodule PhoenixTodoWeb.Router do
   scope "/", PhoenixTodoWeb do
     pipe_through :browser
 
-    resources "/account", AccountController, only: [:index]
+    resources "/account", AccountController, only: [:index, :create]
     get "/", PageController, :index
   end
 
