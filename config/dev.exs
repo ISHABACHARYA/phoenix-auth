@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :phoenix_todo, PhoenixTodo.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "redmenishab",
+  password: "",
   hostname: "localhost",
   database: "phoenix_todo_dev",
   stacktrace: true,

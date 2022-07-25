@@ -8,6 +8,7 @@ defmodule PhoenixTodoWeb.Router do
     plug :put_root_layout, {PhoenixTodoWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug PhoenixTodoWeb.Auth
   end
 
   pipeline :api do
@@ -17,6 +18,7 @@ defmodule PhoenixTodoWeb.Router do
   scope "/", PhoenixTodoWeb do
     pipe_through :browser
 
+    resources "/account", AccountController, only: [:index]
     get "/", PageController, :index
   end
 
