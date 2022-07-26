@@ -7,11 +7,11 @@ defmodule PhoenixTodo.Account do
   end
 
   def get_user(id) do
-    Repo.one!(User, id)
+    Repo.get(User, id)
   end
 
   def get_user_by(params) do
-    Repo.all(User, params)
+    Repo.get(User, params)
   end
 
   def create_user(params \\ %{}) do
@@ -23,7 +23,7 @@ defmodule PhoenixTodo.Account do
   def register_user(%User{} = user, params \\ %{}) do
     user
     |> User.registration_changeset(params)
-    |> Repo.insert!()
+    |> Repo.insert()
   end
 
   def authenticate_by_email_password(email, password) do
