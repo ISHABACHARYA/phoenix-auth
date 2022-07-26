@@ -1,0 +1,15 @@
+<h1>
+Login User
+</h1>
+
+<%= form_for @changeset, Routes.account_path(@conn, :new), fn f -> %>
+
+
+<div>
+    <%= text_input f, :email, placeholder: "Email" %>
+        <%= error_tag f, :email %>
+    <%= password_input f, :password, placeholder: "Password" %>
+        <%= error_tag f, :password %>
+          <%= submit "Login" %>
+</div>
+<% end %>

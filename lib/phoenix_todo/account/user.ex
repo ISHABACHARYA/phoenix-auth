@@ -24,6 +24,7 @@ defmodule PhoenixTodo.Account.User do
     |> cast(attrs, [:password])
     |> validate_length(:password, min: 6, max: 32)
     |> pass_hash()
+    |> unique_constraint([:email])
   end
 
   defp pass_hash(changeset) do

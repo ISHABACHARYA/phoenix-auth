@@ -11,7 +11,7 @@ defmodule PhoenixTodo.Account do
   end
 
   def get_user_by(params) do
-    Repo.get(User, params)
+    Repo.get_by(User, params)
   end
 
   def create_user(params \\ %{}) do

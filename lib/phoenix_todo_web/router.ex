@@ -18,14 +18,16 @@ defmodule PhoenixTodoWeb.Router do
   scope "/", PhoenixTodoWeb do
     pipe_through :browser
 
-    resources "/account", AccountController, only: [:index, :create]
+    resources "/account", AccountController
+    get "/login", AccountController, :login
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PhoenixTodoWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", PhoenixTodoWeb do
+    pipe_through :api
+    get "/test", TestController, :index
+  end
 
   # Enables LiveDashboard only for development
   #
